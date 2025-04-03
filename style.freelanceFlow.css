@@ -1,0 +1,730 @@
+/* colors : 
+dark green : #28544b
+light green : #acbd86
+light orange : #ffd6a0
+dark orange : #ffa06f */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: "Andada Pro", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Header Styling */
+header {
+    background-color: #f4f4f4;
+    color: #fff;
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    text-align: center;
+}
+
+/* Centering Header Content */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 0;
+    display: block;
+    margin-top: 0;
+}
+
+/* Title Styling */
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-image: linear-gradient(-225deg, #28544b 0%, #acbd86 29%, #ffd6a0 67%, #ffa06f 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3.4s linear infinite;
+    margin-top: -1rem;
+
+}
+
+@keyframes textclip {
+    0% {
+        background-position: 200% center;
+    }
+
+    100% {
+        background-position: -200% center;
+    }
+}
+
+/* Slogan Styling */
+header p {
+    font-size: 1.1rem;
+    font-family: "Abel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+#your {
+    color: #ffa06f;
+}
+
+/* Navigation Styling */
+ul {
+    color: #333;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    /* Center the navigation */
+
+}
+
+ul li {
+    list-style: none;
+    margin: 0 5px;
+    /* Adjusted margin for smaller space */
+}
+
+ul li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: 3px 6px;
+    /* Adjusted padding for smaller links */
+    font-size: 1.2rem;
+    /* Adjusted font size */
+    font-family: "Sans-serif";
+    color: #333;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    transform: scale(1.2);
+    /* Slightly smaller scale effect */
+    opacity: 1;
+    filter: blur(0);
+    text-decoration: none;
+    color: #fff;
+}
+
+ul li a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffa06f;
+    /* Dark Orange Color */
+    transition: 0.3s;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+ul li a:hover:before {
+    transition: transform 0.3s;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/*hero*/
+
+#hero {
+    background-color: #28544b;
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#hero h2 {
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #ff4e50, #fc913a, #f9d423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    animation: fadeInSlide 2s ease-out, pulseGlow 3s infinite alternate, floatUpDown 4s infinite ease-in-out;
+}
+
+/* Continuous floating effect */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Glowing pulse effect */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 2px 2px 10px rgba(255, 78, 80, 0.5);
+    }
+
+    100% {
+        text-shadow: 2px 2px 20px rgba(255, 78, 80, 1);
+    }
+}
+
+/* Continuous color shifting effect */
+@keyframes colorShift {
+    0% {
+        background: linear-gradient(45deg, #ff4e50, #fc913a, #f9d423);
+    }
+
+    50% {
+        background: linear-gradient(45deg, #f9d423, #ff4e50, #fc913a);
+    }
+
+    100% {
+        background: linear-gradient(45deg, #fc913a, #f9d423, #ff4e50);
+    }
+}
+
+/* Apply continuous background color shifting */
+#hero h2::after {
+    content: attr(data-text);
+    /* Duplicates the text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ff4e50, #fc913a, #f9d423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorShift 5s infinite linear;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* About Section */
+#about {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* About Section Heading with Animation */
+#aboutMe {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-image: linear-gradient(-225deg, #28544b 0%, #acbd86 29%, #ffd6a0 67%, #ffa06f 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3.4s linear infinite;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated underline effect */
+#about h2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #ffa06f;
+    /* dark orange */
+    bottom: 0;
+    left: -100%;
+    animation: slideInAbout 1s forwards;
+}
+
+/* Text color transition on hover */
+#about h2:hover {
+    color: #28544b;
+    /* dark green */
+    transition: color 0.3s ease;
+}
+
+/* Keyframe animation for the underline */
+@keyframes slideInAbout {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+/* Text shadow effect on hover */
+#about h2:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-image img {
+    width: 200px;
+    /* Adjust as needed */
+    height: 200px;
+    /* Adjust as needed */
+    border-radius: 50%;
+    /* For a circular image */
+    object-fit: cover;
+    /* Ensure image fills the circle */
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image img {
+        width: 150px;
+        /* Smaller image for mobile */
+        height: 150px;
+        /* Smaller image for mobile */
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+/* Services Section */
+/* Services Section */
+#title {
+    font-size: 2.5rem;
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-image: linear-gradient(-225deg, #28544b 0%, #acbd86 29%, #ffd6a0 67%, #ffa06f 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3.4s linear infinite;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#services {
+    padding: 2rem 1rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Services Section Heading with Animation */
+#services h2 {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #28544b;
+    text-shadow: 1px 1px 3px #acbd86;
+    -webkit-background-clip: text;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated underline effect */
+#services h2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #ffa06f;
+    /* dark orange */
+    bottom: 0;
+    left: -100%;
+    animation: slideIn 1s forwards;
+}
+
+/* Text color transition */
+#services h2:hover {
+    color: #28544b;
+    /* dark green */
+    transition: color 0.3s ease;
+}
+
+/* Keyframe animation for the underline */
+@keyframes slideIn {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+/* Text shadow effect on hover */
+#services h2:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#services p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.service-item {
+    margin-bottom: 1rem;
+}
+
+.service-item h3 {
+    font-size: 1rem;
+    color: #ffa06f;
+    margin-bottom: 0;
+    font-family: "Abel", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.cta {
+    margin-top: 3rem;
+    background-color: #28544b;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.cta p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    background-color: #ffa06f;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ffd6a0;
+}
+
+strong {
+    color: #28544b;
+}
+
+#contactMeToday {
+    color: #ffd6a0;
+    font-weight: bold;
+}
+
+/* For Responsiveness */
+@media (max-width: 768px) {
+    #services h2 {
+        font-size: 2.5rem;
+    }
+
+    .service-item h3 {
+        font-size: 1.8rem;
+    }
+
+    .cta p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #ffa06f;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    background-color: #ffd6a0;
+}
+
+/* Contact Section */
+#contact {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-family: "Alumni Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-image: linear-gradient(-225deg, #28544b 0%, #acbd86 29%, #ffd6a0 67%, #ffa06f 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3.4s linear infinite;
+    font-optical-sizing: auto;
+
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Small devices (phones) */
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #hero {
+        padding: 3rem 0;
+    }
+
+    #hero h2 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    form input,
+    form textarea {
+        padding: 0.8rem;
+    }
+
+    form button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Medium devices (tablets and small laptops) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 4rem;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    #hero h2 {
+        font-size: 2.3rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 1rem 1.8rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        max-width: 600px;
+    }
+
+    form input,
+    form textarea {
+        padding: 1rem;
+    }
+
+    form button {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+}
+
+/* Large devices (desktops and large laptops) */
+@media screen and (min-width: 1025px) {
+    header h1 {
+        font-size: 5rem;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    #hero {
+        padding: 5rem 0;
+    }
+
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.3rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+
+    section {
+        padding: 4rem 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    form {
+        max-width: 600px;
+    }
+
+    form input,
+    form textarea {
+        padding: 1rem;
+    }
+
+    form button {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+    }
+}
